@@ -1,0 +1,2 @@
+# Not much needed, just standard Python stuff
+# sqlite3 is built-in, so we're good

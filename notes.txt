@@ -1,0 +1,10 @@
+Testing Notes
+------------
+
+- Had to mess with VirtualBox USB settings to get the phone to show up. Make sure the device is passed through.
+- ADB kept saying "device not authorized." Had to unlock the phone and tap "Allow" on the USB debugging prompt.
+- Java 8 gave me JAR errors with ABE. Switched to JDK 11 and it worked fine.
+- Autopsy is slow on my VM. Give it time to load the data.
+- The contacts2.db path might be different depending on the Android version. Check the extracted folder.
+- TODO: Figure out how to script Autopsy. Their Python API looks complicated.
+- Reports look decent in Chrome but kinda wonky in Firefox. Need to tweak the CSS maybe.
