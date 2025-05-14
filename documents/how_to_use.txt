@@ -1,0 +1,32 @@
+How to Use This Project
+----------------------
+
+1. Set up your environment:
+   - Install ADB, Autopsy, and Java on Kali Linux.
+   - Download abe.jar and put it in the project folder.
+   - Connect your Android phone and enable USB debugging.
+
+2. Extract data:
+   Run: ./scripts/get_data.sh <device_id> data/backups
+   - Get <device_id> from `adb devices`.
+   - This saves a .ab backup file.
+
+3. Unpack the backup:
+   Run: python3 scripts/unpack_backup.py data/backups/backup_<timestamp>.ab data/extracted
+   - This gives you the raw data.
+
+4. Analyze data:
+   Run: python3 scripts/dig_data.py data/extracted data/reports
+   - This pulls call logs and saves them.
+   - Then open Autopsy, load the extracted data, and save its report to data/reports.
+
+5. Make a report:
+   Run: python3 scripts/make_report.py data/reports/call_logs.txt data/reports
+   - This creates an HTML report.
+
+Tips:
+- If ADB fails, check USB debugging and authorization.
+- Java issues? Try JDK 11.
+- Autopsy is a bit finicky; make sure it sees the extracted folder.
+
+Check notes.txt for more troubleshooting.
